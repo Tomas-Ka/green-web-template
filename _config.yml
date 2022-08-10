@@ -1,22 +1,22 @@
-title:               Green Web Template
-url:                 'https://garden.megu.space'
-favicon:              🥬
+title:               2022-23 Spyken's dnd club
+url:                 'https://dnd-club-22.netlify.app/'
+favicon:              🏰
 
 # https://jekyllrb.com/docs/configuration/options/
-timezone: Sweden/Stockholm
+timezone: Europe/Stockholm
 
 # Comment out .htaccess if you're uploading to a non-Apache server such as Netlify
-#include:             ['_pages', '.htaccess']
+#include:             ['.htaccess']
 
 # Remove obsidian-templates and delete the folder if you aren't using Obsidian Templates plugin
-exclude:             ['_includes/notes_graph.json','obsidian-templates']
+exclude:             ['obsidian-templates'] #'_includes/notes_graph.json',
 
 # If you are using a host that cannot resolve URLs that do
 # not end with .html (such as Neocities or Dreamhost), set this to 'true'.
 use_html_extension:  true
 
 # 'True' displays notes graph at bottom of each note
-show_notes_graph: false
+show_notes_graph: true
 
 # Set to `true` to open non-internal links in new tabs, or
 # set to `false` to open non-internal links in current tab.
