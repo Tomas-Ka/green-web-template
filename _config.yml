@@ -22,6 +22,11 @@ show_notes_graph: true
 # set to `false` to open non-internal links in current tab.
 open_external_links_in_new_tab: true
 
+# Set to `true` to replace tweet URLs with Twitter embeds.
+# Note that doing so will negatively the reader's privacy
+# as their browser will communicate with Twitter's servers.
+embed_tweets: false
+
 permalink:           slug
 
 # Set to 'true' to generate excerpts for pages. Notes are technically pages.
