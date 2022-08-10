@@ -71,7 +71,7 @@ class BidirectionalLinksGenerator < Jekyll::Generator
         \]{2} # Make sure it ends in ]]
         (?!.*?[\r\n]+[`{3,}|~{3,}]) # Exclude codeblocks
         /x, # match on the remaining double-bracket links
-        <<~HTML.chomp    # replace with this HTML (\\1 is what was inside the brackets)
+        <<~HTML.delete("\n")    # replace with this HTML (\\1 is what was inside the brackets)
           <span title='There is no note that matches this link.' class='invalid-link'>
             <span class='invalid-link-brackets'>[[</span>
             \\1
