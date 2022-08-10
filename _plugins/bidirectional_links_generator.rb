@@ -16,42 +16,48 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       # Convert all Wiki/Roam-style double-bracket link syntax to plain HTML
       # anchor tag elements (<a>) with "internal-link" CSS class
       all_docs.each do |note_potentially_linked_to|
-        title_from_filename = File.basename(
-          note_potentially_linked_to.basename,
-          File.extname(note_potentially_linked_to.basename)
-        ).gsub('_', ' ').capitalize
+        note_title_regexp_pattern = Regexp.escape(
+          File.basename(
+            note_potentially_linked_to.basename,
+            File.extname(note_potentially_linked_to.basename)
+          )
+        ).gsub('\_', '[ _]').gsub('\-', '[ -]').capitalize
+
+        title_from_data = note_potentially_linked_to.data['title']
+        if title_from_data
+          title_from_data = Regexp.escape(title_from_data)
+        end
 
         new_href = "#{note_potentially_linked_to.url}#{link_extension}"
         anchor_tag = "<a class='internal-link' href='#{new_href}'>\\1</a>"
 
         # Replace double-bracketed links with label using note title
         # [[A note about cats|this is a link to the note about cats]]
-        current_note.content = current_note.content.gsub(
-          /\[\[#{title_from_filename}\|(.+?)(?=\])\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
+        current_note.content.gsub!(
+          /\[\[#{note_title_regexp_pattern}\|(.+?)(?=\])\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
           anchor_tag
         )
 
         # Replace double-bracketed links with label using note filename
         # [[cats|this is a link to the note about cats]]
-        current_note.content = current_note.content.gsub(
-          /\[\[#{note_potentially_linked_to.data['title']}\|(.+?)(?=\])\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
+        current_note.content.gsub!(
+          /\[\[#{title_from_data}\|(.+?)(?=\])\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
           anchor_tag
         )
 
         # Replace double-bracketed links using note title
         # [[a note about cats]]
-        current_note.content = current_note.content.gsub(
-          /\[\[(#{note_potentially_linked_to.data['title']})\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
+        current_note.content.gsub!(
+          /\[\[(#{title_from_data})\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
           anchor_tag
         )
 
         # Replace double-bracketed links using note filename
         # [[cats]]
-        current_note.content = current_note.content.gsub(
-          /\[\[(#{title_from_filename})\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
+        current_note.content.gsub!(
+          /\[\[(#{note_title_regexp_pattern})\]\](?!.*?[\r\n]+[`{3,}|~{3,}])/i,
           anchor_tag
         )
-
       end
 
       # At this point, all remaining double-bracket-wrapped words are
@@ -107,11 +113,6 @@ class BidirectionalLinksGenerator < Jekyll::Generator
   end
 
   def note_id_from_note(note)
-    note.data['title']
-      .dup
-      .gsub(/\W+/, ' ')
-      .delete(' ')
-      .to_i(36)
-      .to_s
+    note.data['title'].bytes.join
   end
 end
