@@ -9,11 +9,11 @@ timezone: Europe/Stockholm
 #include:             ['.htaccess']
 
 # Remove obsidian-templates and delete the folder if you aren't using Obsidian Templates plugin
-exclude:             ['obsidian-templates'] #'_includes/notes_graph.json',
+exclude:             ['obsidian-templates', '_includes/notes_graph.json']
 
 # If you are using a host that cannot resolve URLs that do
 # not end with .html (such as Neocities or Dreamhost), set this to 'true'.
-use_html_extension:  true
+use_html_extension:  false
 
 # 'True' displays notes graph at bottom of each note
 show_notes_graph: true
@@ -27,10 +27,10 @@ open_external_links_in_new_tab: true
 # as their browser will communicate with Twitter's servers.
 embed_tweets: false
 
-permalink:           slug
+permalink:    slug
 
 # Set to 'true' to generate excerpts for pages. Notes are technically pages.
-page_excerpts:      true
+page_excerpts: true
 
 # Enabled CommonMark instead of default kramdown. All extensions are enabled, but you can choose to remove some by referencing https://github.github.com/gfm/ and https://github.com/gjtorikian/commonmarker#options
 markdown: CommonMarkGhPages

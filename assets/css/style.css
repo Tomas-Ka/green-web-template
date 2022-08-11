@@ -276,7 +276,6 @@ a.internal-link:after, a.footnote-backref:after {
   font-feature-settings: "sups"1;
   letter-spacing: 1px;
   height: 1em;
-  display: table-caption;
 }
 
 .footnote-ref a::before {
@@ -311,9 +310,10 @@ a.internal-link:after, a.footnote-backref:after {
   cursor: pointer;
   fill: var(--selected-node);
 }
+
 .text [active] {
   cursor: pointer;
-fill: var(--text-color)
+  fill: var(--text-color)
 }
 
 .inactive {
