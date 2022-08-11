@@ -27,7 +27,7 @@ Alternatively, you can use regular [Markdown syntax](https://www.markdownguide.o
 
 Since the Web is all about HTML, you can always use plain HTML if you want, like this: <a class="internal-link" href="/cats.html">This is a link to the note about cats with HTML</a>. Don't forget to use the `.internal-link` class to make sure the link is styled as an internal link (without the little arrow).
 
-Of course, you can also link to external websites, like this: [this is a link to Wikipedia](https://wikipedia.org/). Again, you can use plain HTML if you prefer. Footnotes are also supported and will be treated like internal links.[^1] You can point to other notes in your footnotes.[^2]
+Of course, you can also link to external websites, like this: [this is a link to Wikipedia](https://wikipedia.org/). Again, you can use plain HTML if you prefer. Footnotes are also supported and will be treated like internal links.[^1] You can point to other notes in your footnotes.[^2] test
 
 [^1]: This is a footnote. For more information about using footnotes, check out the [Markdown Guide](https://www.markdownguide.org/extended-syntax/#footnotes).
 [^2]: This is another footnote that links to the note about [[cats]]. You may also point to [[notes that do not exist]] if you wish.
@@ -59,15 +59,15 @@ Some behavior is configurable by tweaking the `_config.yml` file.
 
 **`favicon`**: Insert an emoji and this will be generated as your site's favicon automatically! This is only supported by browsers that recognize svg favicons, which is the majority of modern browsers.
 
+**`timezone`**: Timezone ([in tz format](https://en.wikipedia.org/wiki/Tz_database)) makes the Last Modified At plugin display the right date when you edit files.
+
 **`use_html_extension`**: if you use a static host that doesn't support URLs that don't end with `.html` (such as Neocities or Dreamhost), leave this as `true` in the `_config.yml` file. If you configure your `.htaccess` to remove extensions, remember to add `link` metadata for canonical URLs.
+
+**`show_notes_graph`**:  when set to `true` Shows the note graph at the bottom of every note page, default is `true`.
 
 **`open_external_links_in_new_tab`**: when set to `true`, this makes external links open in new tabs. Set to `false` to open all links in the current tab.
 
 **`embed_tweets`**: when set to `true`, tweet URLs on their own lines will be replaced with a Twitter embed. Default value is `false`.
-
-**`url`**: Set to your full web URL including `https://`
-
-**`timezone`**: Set to your desired posting timezone so that the Last Modified At plugin displays the right date when you edit files.
 
 ### Pages
 Save static pages in the root directory in `.md` format. Each page needs to have the following at the top:
@@ -138,14 +138,11 @@ $ cat /dev/urandom | grep "the answer to life" # shell scripts look nice too
 
 ### Next steps
 
-**If this template is useful to you in any way, consider [donating](https://ko-fi.com/maximevaillancourt) to support my work**. ☕
+This digital garden template is free, open-source, and [available on GitHub here](/https://github.com/defyd/green-web-template).
 
-This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
 
 Optional: [[Obsidian Setup]]
 
 Go forth, have fun, and learn new something every day! ✌️
-
-### Footnotes
 
 

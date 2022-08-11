@@ -5,9 +5,10 @@ category: Development
 # Wikilinks
 Double bracketed links are converted to Jekyll-ingestible Markdown formatting by the `bidirectional_links_generator.rb` plugin. However, Obsidian's Wikilink setting also applies to a proprietary image embed format with double brackets. 
 
-I'm working on another plugin to complement the bidirectional link generator and resolve Obsidian image embeds automatically. This page is for testing the efficacy of the script and the regex I'm using.
+~~I'm working on another plugin to complement the bidirectional link generator and resolve Obsidian image embeds automatically. This page is for testing the efficacy of the script and the regex I'm using.~~
+The plugin that Meewgumi wrote works great now!
 
-This is a useful reference for [Regex in Ruby](https://ruby-doc.org/core-3.0.1/doc/regexp_rdoc.html) and this is a good [Ruby Regex Tester](https://rubular.com/).
+This is a useful reference for [Regex in Ruby](https://ruby-doc.org/core-3.0.1/doc/regexp_rdoc.html) and this is a good [Ruby Regex Tester](https://rubular.com/), and finally this is a good [General Regex Tester / Writer](https://regexr.com/).
 
 # Version 1
 - Does not support `"title"` in Markdown links because I couldn't figure out the regex
