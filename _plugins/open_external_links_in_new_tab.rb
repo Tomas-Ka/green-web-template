@@ -17,7 +17,7 @@ end
 
 def convert_links(doc)
   open_external_links_in_new_tab = !!doc.site.config["open_external_links_in_new_tab"]
-
+  parsed_doc = Nokogiri::HTML(doc.content)
   if open_external_links_in_new_tab
     parsed_doc.css("a:not(.footnote-backref):not(.internal-link)").each do |link|
       link.set_attribute('target', '_blank')
