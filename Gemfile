@@ -12,3 +12,5 @@ group :jekyll_plugins do
   gem 'jekyll-commonmark-ghpages'
   gem "jekyll-last-modified-at"
 end
+
+gem "tzinfo-data", "~> 1.2022"
