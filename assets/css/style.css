@@ -313,7 +313,7 @@ a.internal-link:after, a.footnote-backref:after {
 
 .text [active] {
   cursor: pointer;
-fill: var(--text-color)
+  fill: var(--text-color)
 }
 
 .inactive {
