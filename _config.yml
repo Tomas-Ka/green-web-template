@@ -3,7 +3,7 @@ url: "https://garden.megu.space"
 favicon: 🥬
 
 # https://jekyllrb.com/docs/configuration/options/
-timezone: Sweden/Stockholm
+timezone: Europe/Stockholm
 
 # Comment out .htaccess if you're uploading to a non-Apache server such as Netlify
 #include:             ['_pages', '.htaccess']

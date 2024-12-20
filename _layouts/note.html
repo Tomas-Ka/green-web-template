@@ -3,13 +3,14 @@ layout: default
 ---
 
 <article>
-    <h1>{{ page.title }}</h1>
-    <header><p><time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}Last updated {{ page.last_modified_at | date: "%B %-d, %Y" }}{% endif %}</time>{% if page.category != null %} &ndash; {{page.category}}{% endif %}</p></header>
-
-  {{ content }}
+  <h1>{{ page.title }}</h1>
+  <header><p><time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}Last updated {{ page.last_modified_at | date: "%B %-d, %Y" }}{% endif %}</time>{% if page.category != null %} &ndash; {{page.category}}{% endif %}</p></header>
+  <content>
+    {{ content }}
+  </content>
 </article>
 <aside>
-  <h5>Notes mentioning this note</h5>
+  <h5>pages mentioning this one</h5>
   {% if page.backlinks.size > 0 %}
     {% for backlink in page.backlinks %}
     <div class="backlink-box">
@@ -27,4 +28,5 @@ layout: default
   {% endif %}
 </aside>
 <section>
-  {%- if site.show_notes_graph -%}<p>Here are all the notes in this garden, along with their links, visualized as a graph.</p>{% include notes-graph.html %}{%- endif -%}</section>
+  {%- if site.show_notes_graph -%}{% include notes-graph.html %}{%- endif -%}
+</section>
