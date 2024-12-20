@@ -1,8 +1,17 @@
 # Green Web Template
+Except it's totally blue now
 
 This Jekyll template is a way to organize and publish your thoughts from [Obsidian](https://obsidian.md/) to the web, complete with backlinks, notes graph, and wikilink support. This template was modified by [Megumi Tanaka](https://megumi.co) in 2021. Here's <a href="https://garden.megu.space/your-first-note.html#installation" class="internal-link">how to install this template</a>. View this template on [Github](https://github.com/meewgumi/green-web-template).
 
 Based on the [Jekyll digital garden template](https://github.com/maximevaillancourt/digital-garden-jekyll-template) by Maxime Vaillancourt.
+
+# To run locally
+1. install ruby and rubygems (`pacman -S rubygems ruby` on arch)
+    * If on arch, make sure you set your path properly, see [this](https://wiki.archlinux.org/title/Ruby#RubyGems)
+3. install the bundle gem (`gem install bundler`)
+4. run bundler `bundle`
+5. run locally with `bundle exec jekyll serve`
+
 
 ## How is this different?
 
@@ -13,7 +22,7 @@ Based on the [Jekyll digital garden template](https://github.com/maximevaillanco
 -   **Emoji favicons!** Configure at site level or page level with `favicon:` variable
 -   **Archive Page!** An index of all notes, date updated, category, and excerpt.
 -   **Obsidian Templates!** Easily create a new note or page with the proper front matter variables.
--   **Green Bok Choy Theme!** This is the public version of the theme I'll be using for my personal site [megu.space](https://megu.space)
+-   **Blue Theme!** This is my (Tomas') version of Megu's own Bok choi theme, which you can see here: [megu.space](https://megu.space)
 
 ## What makes this a green template?
 
@@ -90,7 +99,7 @@ Interesting errors I've encountered:
 -   Does not yet support Obsidian Heading Links in this format `[[page#Heading]]`, although each heading automatically generates an `id=` so you can create anchor links manually with HTML
 -   Emoji is not unicode, so they might not display properly in all browsers and operating systems
 -   Footnotes automatically open in new tab, even if they're internal links
--   D3.js graph zooms when you scroll, so I disabled the graph by default
+-   ~~D3.js graph zooms when you scroll, so I disabled the graph by default~~ **Fixed**, but the graph is still disabled by default.
 -   Excerpts on archive page truncate weirdly. I wish there was a way to exclude headings. There probably is if I get deeper into Nokogiri documentation.
 
 # License
